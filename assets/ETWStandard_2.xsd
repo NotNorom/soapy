@@ -1,0 +1,492 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI
+(https://github.com/eclipse-ee4j/metro-jax-ws). RI's version is JAX-WS RI 2.3.5
+git-revision#7ddc91f. -->
+<xs:schema xmlns:ns1="http://www.ecotransit.org/XMLSchema/standard/2012"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+    targetNamespace="http://www.ecotransit.org/XMLSchema/ecotransit_world/2012">
+
+    <xs:import namespace="http://www.ecotransit.org/XMLSchema/standard/2012"
+        schemaLocation="https://updatetest.ecotransit.org/ETWStandard?xsd=1" />
+
+    <xs:element name="calculateCompareTransportRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cargo" type="ns1:Cargo" />
+                <xs:element name="transportModes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="road" type="xs:boolean" default="true" />
+                            <xs:element name="rail" type="xs:boolean" default="false" />
+                            <xs:element name="air" type="xs:boolean" default="false" />
+                            <xs:element name="sea" type="xs:boolean" default="false" />
+                            <xs:element name="inlandwaterways" type="xs:boolean" default="false" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="route">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="departure" type="ns1:RequestStation" />
+                            <xs:element name="destination" type="ns1:RequestStation" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="useAliasTable" type="xs:boolean" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calculateComplexTransportRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cargo" type="ns1:Cargo" />
+                <xs:element name="transportDate" type="ns1:Date" minOccurs="0" />
+                <xs:element name="accountingVariant" type="ns1:AccountingVariantParameters"
+                    minOccurs="0" />
+                <xs:element name="settings" type="ns1:CalculationSettings" minOccurs="0" />
+                <xs:element name="section" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="route">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="departure" type="ns1:RequestStation"
+                                            maxOccurs="unbounded" />
+                                        <xs:element name="destination" type="ns1:RequestStation"
+                                            maxOccurs="unbounded" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="carriage">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="preCarriage"
+                                            type="ns1:PreOrPostCarriageParameters" minOccurs="0" />
+                                        <xs:element name="mainCarriage"
+                                            type="ns1:CarriageParameters" />
+                                        <xs:element name="postCarriage"
+                                            type="ns1:PreOrPostCarriageParameters" minOccurs="0" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="information" type="xs:string" />
+                        <xs:attribute name="carriageInfo" type="xs:string" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="output" type="ns1:Output" minOccurs="0" />
+                <xs:element name="additionalInfo" type="xs:anyType" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="transportID" type="xs:string" />
+            <xs:attribute name="sectionSkip" type="ns1:SectionSkip" />
+            <xs:attribute name="useAliasTable" type="xs:boolean" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calculateDistributionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="section" type="ns1:DistributionSection" maxOccurs="unbounded" />
+                <xs:element name="output" type="ns1:DistributionOutput" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="showRoute" type="xs:boolean" />
+            <xs:attribute name="closedDistributionTour" type="xs:boolean" />
+            <xs:attribute name="useAliasTable" type="xs:boolean" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calculateEasyTransportRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="weightTons" type="xs:double" />
+                <xs:element name="departure">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="cityName" type="ns1:CityName" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="destination">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="cityName" type="ns1:CityName" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="transportMode" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="useAliasTable" type="xs:boolean" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calculateFlightNoTransportRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cargo" type="ns1:Cargo" />
+                <xs:element name="preCarriage" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="startLocation" type="ns1:RequestStation" />
+                            <xs:element name="carriageParameters"
+                                type="ns1:PreOrPostCarriageParameters" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="flightNoSection" type="ns1:FlightNoSection" maxOccurs="unbounded" />
+                <xs:element name="postCarriage" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="endLocation" type="ns1:RequestStation" />
+                            <xs:element name="carriageParameters"
+                                type="ns1:PreOrPostCarriageParameters" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="additionalInfo" type="xs:anyType" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="transportID" type="xs:string" />
+            <xs:attribute name="useAliasTable" type="xs:boolean" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calculateRouteTransportRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cargo" type="ns1:Cargo" />
+                <xs:element name="transportDate" type="ns1:Date" minOccurs="0" />
+                <xs:element name="accountingVariant" type="ns1:AccountingVariantParameters"
+                    minOccurs="0" />
+                <xs:element name="section" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="route">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="edge" type="ns1:RouteEdge"
+                                            maxOccurs="unbounded" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="carriage" type="ns1:CarriageParameters" />
+                        </xs:sequence>
+                        <xs:attribute name="information" type="xs:string" />
+                        <xs:attribute name="carriageInfo" type="xs:string" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="output" type="ns1:Output" minOccurs="0" />
+                <xs:element name="additionalInfo" type="xs:anyType" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="transportID" type="xs:string" />
+            <xs:attribute name="useAliasTable" type="xs:boolean" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calculateSimpleTransportRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cargo" type="ns1:Cargo" />
+                <xs:element name="route">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="departure" type="ns1:RequestStation"
+                                maxOccurs="unbounded" />
+                            <xs:element name="destination" type="ns1:RequestStation"
+                                maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="carriage">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="mainCarriage" type="ns1:CarriageParameters" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="output" type="ns1:Output" minOccurs="0" />
+                <xs:element name="additionalInfo" type="xs:anyType" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="transportID" type="xs:string" />
+            <xs:attribute name="accountingVariant" type="ns1:AccountingVariant" />
+            <xs:attribute name="useAliasTable" type="xs:boolean" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calculationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="error" type="ns1:Error" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element name="cargo" type="ns1:Cargo" minOccurs="0" />
+                <xs:element name="accountingVariant" type="ns1:AccountingVariantParameters"
+                    minOccurs="0" />
+                <xs:element name="preCarriage" type="ns1:ResultSection" nillable="true"
+                    minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="result" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="warning" type="ns1:Error" nillable="true"
+                                minOccurs="0" maxOccurs="unbounded" />
+                            <xs:element name="section" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="warning" type="ns1:Error" nillable="true"
+                                            minOccurs="0" maxOccurs="unbounded" />
+                                        <xs:element name="preCarriage" type="ns1:ResultSection"
+                                            nillable="true" minOccurs="0" maxOccurs="unbounded" />
+                                        <xs:element name="mainhaul" type="ns1:ResultSection"
+                                            nillable="true" minOccurs="0" maxOccurs="unbounded" />
+                                        <xs:element name="postCarriage" type="ns1:ResultSection"
+                                            nillable="true" minOccurs="0" maxOccurs="unbounded" />
+                                    </xs:sequence>
+                                    <xs:attribute name="information" type="xs:string" />
+                                    <xs:attribute name="carriageInfo" type="xs:string" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="additionalInfo" type="xs:anyType" minOccurs="0" />
+                <xs:element name="debug" type="xs:string" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="transportID" type="xs:string" />
+            <xs:attribute name="transportDate" type="xs:date" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="cleanUpCacheRequest">
+        <xs:complexType>
+            <xs:sequence />
+            <xs:attribute name="customer" type="xs:string" />
+            <xs:attribute name="password" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="cleanUpCacheResponse">
+        <xs:complexType>
+            <xs:sequence />
+            <xs:attribute name="message" type="xs:string" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="distributionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="error" type="ns1:Error" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element name="result" type="ns1:DistributionLoadResult" nillable="true"
+                    minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="route" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="section" type="ns1:ResultSection"
+                                maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="additionalInfo" type="xs:anyType" minOccurs="0" />
+                <xs:element name="debug" type="xs:string" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="transportID" type="xs:string" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="findTransferPointsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="seaVariant" type="xs:string" minOccurs="0" />
+                <xs:element name="station" type="ns1:RequestStation" maxOccurs="unbounded" />
+                <xs:element name="carriageDescription" type="ns1:SeaShipmentDescriptionList"
+                    nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="transportMode" type="ns1:TransportMode" use="required" />
+            <xs:attribute name="seaCargoType" type="ns1:SeaCargoType" />
+            <xs:attribute name="aircraftType" type="ns1:AircraftCargoType" />
+            <xs:attribute name="inlandWaterwaysCargoType" type="ns1:InlandWaterwaysCargoType" />
+            <xs:attribute name="ignoreDistanceClass" type="xs:boolean" />
+            <xs:attribute name="carrier" type="xs:string" />
+            <xs:attribute name="transportDate" type="xs:date" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="findTransferPointsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="locations" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="location" type="ns1:Location" nillable="true"
+                                minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="vehicles" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="defaultVehicleId" type="xs:long" minOccurs="0" />
+                            <xs:element name="possibleVehicles" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="vehicleId" type="xs:long" minOccurs="0"
+                                            maxOccurs="unbounded" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="error" type="ns1:Error" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getListLocationsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="criterion">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="locationType" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence />
+                                                <xs:attribute name="railStation" type="xs:boolean" />
+                                                <xs:attribute name="locode" type="xs:boolean" />
+                                                <xs:attribute name="airport" type="xs:boolean" />
+                                                <xs:attribute name="district" type="xs:boolean" />
+                                                <xs:attribute name="zipCodeArea" type="xs:boolean" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="exactMatch" type="xs:boolean" />
+                                    <xs:attribute name="matchString" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="zipCode" type="ns1:ZipCodeType" minOccurs="0" />
+                            <xs:element name="uicCode" type="ns1:UicCode" minOccurs="0" />
+                            <xs:element name="locode" type="xs:string" minOccurs="0" />
+                            <xs:element name="iataCode" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="limit" type="xs:int" />
+            <xs:attribute name="country" type="xs:string" />
+            <xs:attribute name="translationLanguage" type="xs:string" />
+            <xs:attribute name="accuracy" type="xs:int" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getListLocationsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="location" type="ns1:Location" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element name="alias" type="ns1:AliasLocation" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element name="error" type="ns1:Error" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getListVehiclesRequest">
+        <xs:complexType>
+            <xs:sequence />
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="transportmode" type="ns1:TransportMode" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getListVehiclesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vehicle" type="ns1:Vehicle" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element name="error" type="ns1:Error" nillable="true" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getVersionRequest">
+        <xs:complexType>
+            <xs:sequence />
+            <xs:attribute name="customer" type="xs:string" />
+            <xs:attribute name="password" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getVersionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string" minOccurs="0" />
+                <xs:element name="server" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="parameter" type="ns1:VersionParameters"
+                                nillable="true" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="database" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="parameter" type="ns1:VersionParameters"
+                                nillable="true" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="webservice" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="parameter" type="ns1:VersionParameters"
+                                nillable="true" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Error" type="ns1:Error" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="uploadAliasMapRequest">
+        <xs:complexType>
+            <xs:sequence />
+            <xs:attribute name="customer" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" />
+            <xs:attribute name="type" type="ns1:LocationType" use="required" />
+            <xs:attribute name="base64File" type="xs:boolean" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="uploadAliasMapResponse">
+        <xs:complexType>
+            <xs:sequence />
+            <xs:attribute name="message" type="xs:string" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,18 @@
+[package]
+name = "soapy"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+thiserror = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+reqwest = { version = "0.11" }
+xml_serde = "1.4"
+tracing = "0.1.37"
+syn = "2.0.28"
+quote = "1.0.32"
+
+[dev-dependencies]
+tracing-subscriber = "0.3.17"

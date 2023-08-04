@@ -1,0 +1,816 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.2 git-revision#3d0bba4. -->
+<xs:schema xmlns:tns="http://enduser.service.web.vcp.netcup.de/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://enduser.service.web.vcp.netcup.de/">
+
+    <xs:element name="addCloudVLANInterface" type="tns:addCloudVLANInterface" />
+
+    <xs:element name="addCloudVLANInterfaceResponse" type="tns:addCloudVLANInterfaceResponse" />
+
+    <xs:element name="addFirewallRule" type="tns:addFirewallRule" />
+
+    <xs:element name="addFirewallRuleResponse" type="tns:addFirewallRuleResponse" />
+
+    <xs:element name="changeIPRouting" type="tns:changeIPRouting" />
+
+    <xs:element name="changeIPRoutingResponse" type="tns:changeIPRoutingResponse" />
+
+    <xs:element name="changeUserPassword" type="tns:changeUserPassword" />
+
+    <xs:element name="changeUserPasswordResponse" type="tns:changeUserPasswordResponse" />
+
+    <xs:element name="deleteFirewallRule" type="tns:deleteFirewallRule" />
+
+    <xs:element name="deleteFirewallRuleResponse" type="tns:deleteFirewallRuleResponse" />
+
+    <xs:element name="getFirewall" type="tns:getFirewall" />
+
+    <xs:element name="getFirewallResponse" type="tns:getFirewallResponse" />
+
+    <xs:element name="getLoginToken" type="tns:getLoginToken" />
+
+    <xs:element name="getLoginTokenResponse" type="tns:getLoginTokenResponse" />
+
+    <xs:element name="getPanelSettings" type="tns:getPanelSettings" />
+
+    <xs:element name="getPanelSettingsResponse" type="tns:getPanelSettingsResponse" />
+
+    <xs:element name="getUserData" type="tns:getUserData" />
+
+    <xs:element name="getUserDataResponse" type="tns:getUserDataResponse" />
+
+    <xs:element name="getVServerIPs" type="tns:getVServerIPs" />
+
+    <xs:element name="getVServerIPsResponse" type="tns:getVServerIPsResponse" />
+
+    <xs:element name="getVServerInformation" type="tns:getVServerInformation" />
+
+    <xs:element name="getVServerInformationResponse" type="tns:getVServerInformationResponse" />
+
+    <xs:element name="getVServerLoad" type="tns:getVServerLoad" />
+
+    <xs:element name="getVServerLoadResponse" type="tns:getVServerLoadResponse" />
+
+    <xs:element name="getVServerLogEntries" type="tns:getVServerLogEntries" />
+
+    <xs:element name="getVServerLogEntriesResponse" type="tns:getVServerLogEntriesResponse" />
+
+    <xs:element name="getVServerLogEntryCount" type="tns:getVServerLogEntryCount" />
+
+    <xs:element name="getVServerLogEntryCountResponse" type="tns:getVServerLogEntryCountResponse" />
+
+    <xs:element name="getVServerNickname" type="tns:getVServerNickname" />
+
+    <xs:element name="getVServerNicknameResponse" type="tns:getVServerNicknameResponse" />
+
+    <xs:element name="getVServerProcesses" type="tns:getVServerProcesses" />
+
+    <xs:element name="getVServerProcessesResponse" type="tns:getVServerProcessesResponse" />
+
+    <xs:element name="getVServerStatToken" type="tns:getVServerStatToken" />
+
+    <xs:element name="getVServerStatTokenResponse" type="tns:getVServerStatTokenResponse" />
+
+    <xs:element name="getVServerState" type="tns:getVServerState" />
+
+    <xs:element name="getVServerStateResponse" type="tns:getVServerStateResponse" />
+
+    <xs:element name="getVServerTrafficOfDay" type="tns:getVServerTrafficOfDay" />
+
+    <xs:element name="getVServerTrafficOfDayResponse" type="tns:getVServerTrafficOfDayResponse" />
+
+    <xs:element name="getVServerTrafficOfMonth" type="tns:getVServerTrafficOfMonth" />
+
+    <xs:element name="getVServerTrafficOfMonthResponse" type="tns:getVServerTrafficOfMonthResponse" />
+
+    <xs:element name="getVServerUpdateNotification" type="tns:getVServerUpdateNotification" />
+
+    <xs:element name="getVServerUpdateNotificationResponse" type="tns:getVServerUpdateNotificationResponse" />
+
+    <xs:element name="getVServerUptime" type="tns:getVServerUptime" />
+
+    <xs:element name="getVServerUptimeResponse" type="tns:getVServerUptimeResponse" />
+
+    <xs:element name="getVServers" type="tns:getVServers" />
+
+    <xs:element name="getVServersResponse" type="tns:getVServersResponse" />
+
+    <xs:element name="sendPasswordResetRequest" type="tns:sendPasswordResetRequest" />
+
+    <xs:element name="sendPasswordResetRequestResponse" type="tns:sendPasswordResetRequestResponse" />
+
+    <xs:element name="setPanelSettings" type="tns:setPanelSettings" />
+
+    <xs:element name="setPanelSettingsResponse" type="tns:setPanelSettingsResponse" />
+
+    <xs:element name="setVServerNickname" type="tns:setVServerNickname" />
+
+    <xs:element name="setVServerNicknameResponse" type="tns:setVServerNicknameResponse" />
+
+    <xs:element name="startVServer" type="tns:startVServer" />
+
+    <xs:element name="startVServerResponse" type="tns:startVServerResponse" />
+
+    <xs:element name="stopVServer" type="tns:stopVServer" />
+
+    <xs:element name="stopVServerResponse" type="tns:stopVServerResponse" />
+
+    <xs:element name="vServerACPIReboot" type="tns:vServerACPIReboot" />
+
+    <xs:element name="vServerACPIRebootResponse" type="tns:vServerACPIRebootResponse" />
+
+    <xs:element name="vServerACPIShutdown" type="tns:vServerACPIShutdown" />
+
+    <xs:element name="vServerACPIShutdownResponse" type="tns:vServerACPIShutdownResponse" />
+
+    <xs:element name="vServerPoweroff" type="tns:vServerPoweroff" />
+
+    <xs:element name="vServerPoweroffResponse" type="tns:vServerPoweroffResponse" />
+
+    <xs:element name="vServerReset" type="tns:vServerReset" />
+
+    <xs:element name="vServerResetResponse" type="tns:vServerResetResponse" />
+
+    <xs:element name="vServerRestore" type="tns:vServerRestore" />
+
+    <xs:element name="vServerRestoreResponse" type="tns:vServerRestoreResponse" />
+
+    <xs:element name="vServerResume" type="tns:vServerResume" />
+
+    <xs:element name="vServerResumeResponse" type="tns:vServerResumeResponse" />
+
+    <xs:element name="vServerStart" type="tns:vServerStart" />
+
+    <xs:element name="vServerStartResponse" type="tns:vServerStartResponse" />
+
+    <xs:element name="vServerSuspend" type="tns:vServerSuspend" />
+
+    <xs:element name="vServerSuspendResponse" type="tns:vServerSuspendResponse" />
+
+    <xs:complexType name="getPanelSettings">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getPanelSettingsResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:panelSettings" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="panelSettings">
+        <xs:sequence>
+            <xs:element name="language" type="xs:string" minOccurs="0" />
+            <xs:element name="passwordlessMode" type="xs:boolean" />
+            <xs:element name="secureAccessMode" type="xs:boolean" />
+            <xs:element name="showNickname" type="xs:boolean" />
+            <xs:element name="webserviceEnabled" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerProcesses">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerProcessesResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerIPs">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerIPsResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerUpdateNotification">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerUpdateNotificationResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="changeUserPassword">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="oldPassword" type="xs:string" />
+            <xs:element name="newPassword" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="changeUserPasswordResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerReset">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerResetResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerResume">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerResumeResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerStart">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerStartResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sendPasswordResetRequest">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="eMail" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sendPasswordResetRequestResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getFirewall">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getFirewallResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:vsFilter" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vsFilter">
+        <xs:sequence>
+            <xs:element name="comment" type="xs:string" minOccurs="0" />
+            <xs:element name="deactivated" type="xs:boolean" />
+            <xs:element name="destIP" type="xs:string" minOccurs="0" />
+            <xs:element name="destPort" type="xs:string" minOccurs="0" />
+            <xs:element name="destPortRange" type="xs:string" minOccurs="0" />
+            <xs:element name="direction" type="xs:string" minOccurs="0" />
+            <xs:element name="id" type="xs:string" minOccurs="0" />
+            <xs:element name="iptype" type="tns:vsipType" minOccurs="0" />
+            <xs:element name="match" type="xs:string" minOccurs="0" />
+            <xs:element name="matchValue" type="xs:string" minOccurs="0" />
+            <xs:element name="proto" type="xs:string" minOccurs="0" />
+            <xs:element name="sort" type="xs:string" minOccurs="0" />
+            <xs:element name="srcIP" type="xs:string" minOccurs="0" />
+            <xs:element name="srcPort" type="xs:string" minOccurs="0" />
+            <xs:element name="srcPortRange" type="xs:string" minOccurs="0" />
+            <xs:element name="target" type="xs:string" minOccurs="0" />
+            <xs:element name="valid" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerSuspend">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerSuspendResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getUserData">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getUserDataResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:userDataObject" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="userDataObject">
+        <xs:sequence>
+            <xs:element name="city" type="xs:string" minOccurs="0" />
+            <xs:element name="company" type="xs:string" minOccurs="0" />
+            <xs:element name="email" type="xs:string" minOccurs="0" />
+            <xs:element name="firstname" type="xs:string" minOccurs="0" />
+            <xs:element name="lastname" type="xs:string" minOccurs="0" />
+            <xs:element name="loginname" type="xs:string" minOccurs="0" />
+            <xs:element name="postcode" type="xs:string" minOccurs="0" />
+            <xs:element name="street" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerInformation">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vservername" type="xs:string" />
+            <xs:element name="language" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerInformationResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:vServerInformationObject" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerInformationObject">
+        <xs:sequence>
+            <xs:element name="cpuCores" type="xs:int" />
+            <xs:element name="currentMonth" type="tns:trafficMonthObject" minOccurs="0" />
+            <xs:element name="ips" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="memory" type="xs:long" />
+            <xs:element name="rebootRecommended" type="xs:boolean" />
+            <xs:element name="rebootRecommendedMessage" type="xs:string" minOccurs="0" />
+            <xs:element name="rescueEnabled" type="xs:boolean" />
+            <xs:element name="rescueEnabledMessage" type="xs:string" minOccurs="0" />
+            <xs:element name="serverDisks" type="tns:serverDisk" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="serverInterfaces" type="tns:serverInterface" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="status" type="xs:string" minOccurs="0" />
+            <xs:element name="uptime" type="xs:string" minOccurs="0" />
+            <xs:element name="vServerName" type="xs:string" minOccurs="0" />
+            <xs:element name="vServerNickname" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="trafficMonthObject">
+        <xs:sequence>
+            <xs:element name="in" type="xs:long" />
+            <xs:element name="month" type="xs:int" />
+            <xs:element name="out" type="xs:long" />
+            <xs:element name="total" type="xs:long" />
+            <xs:element name="year" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="serverDisk">
+        <xs:sequence>
+            <xs:element name="capacity" type="xs:long" />
+            <xs:element name="driver" type="xs:string" minOccurs="0" />
+            <xs:element name="name" type="xs:string" minOccurs="0" />
+            <xs:element name="optimizationRecommended" type="xs:boolean" />
+            <xs:element name="optimizationRecommendedMessage" type="xs:string" minOccurs="0" />
+            <xs:element name="used" type="xs:long" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="serverInterface">
+        <xs:sequence>
+            <xs:element name="driver" type="xs:string" minOccurs="0" />
+            <xs:element name="id" type="xs:string" minOccurs="0" />
+            <xs:element name="ipv4IP" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="ipv6IP" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="mac" type="xs:string" minOccurs="0" />
+            <xs:element name="trafficThrottled" type="xs:boolean" />
+            <xs:element name="trafficThrottledMessage" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getLoginToken">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getLoginTokenResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerPoweroff">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerPoweroffResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerStatToken">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerStatTokenResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerState">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerStateResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="changeIPRouting">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="routedIP" type="xs:string" />
+            <xs:element name="routedMask" type="xs:string" />
+            <xs:element name="destinationVserverName" type="xs:string" />
+            <xs:element name="destinationInterfaceMAC" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="changeIPRoutingResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addFirewallRule">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+            <xs:element name="rule" type="tns:filterObject" nillable="true" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="filterObject">
+        <xs:sequence>
+            <xs:element name="comment" type="xs:string" minOccurs="0" />
+            <xs:element name="deactivated" type="xs:string" minOccurs="0" />
+            <xs:element name="destIP" type="xs:string" minOccurs="0" />
+            <xs:element name="destPort" type="xs:string" minOccurs="0" />
+            <xs:element name="destPortRange" type="xs:string" minOccurs="0" />
+            <xs:element name="direction" type="xs:string" minOccurs="0" />
+            <xs:element name="id" type="xs:string" minOccurs="0" />
+            <xs:element name="match" type="xs:string" minOccurs="0" />
+            <xs:element name="matchValue" type="xs:string" minOccurs="0" />
+            <xs:element name="proto" type="xs:string" minOccurs="0" />
+            <xs:element name="sort" type="xs:string" minOccurs="0" />
+            <xs:element name="srcIP" type="xs:string" minOccurs="0" />
+            <xs:element name="srcPort" type="xs:string" minOccurs="0" />
+            <xs:element name="srcPortRange" type="xs:string" minOccurs="0" />
+            <xs:element name="target" type="xs:string" minOccurs="0" />
+            <xs:element name="valid" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addFirewallRuleResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:webServiceSimpleResult" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="webServiceSimpleResult">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string" minOccurs="0" />
+            <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerLogEntryCount">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vservername" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerLogEntryCountResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerUptime">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerUptimeResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="deleteFirewallRule">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+            <xs:element name="rule" type="tns:filterObject" nillable="true" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="deleteFirewallRuleResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:webServiceSimpleResult" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerTrafficOfMonth">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+            <xs:element name="year" type="xs:int" />
+            <xs:element name="month" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerTrafficOfMonthResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:trafficMonthObject" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerLogEntries">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vservername" type="xs:string" />
+            <xs:element name="start" type="xs:int" />
+            <xs:element name="results" type="xs:int" />
+            <xs:element name="language" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerLogEntriesResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:logEntry" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="logEntry">
+        <xs:sequence>
+            <xs:element name="additionalInfo" type="xs:string" minOccurs="0" />
+            <xs:element name="date" type="xs:dateTime" minOccurs="0" />
+            <xs:element name="message" type="xs:string" minOccurs="0" />
+            <xs:element name="type" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerACPIReboot">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerACPIRebootResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="stopVServer">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="stopVServerResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:webServiceSimpleResult" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerTrafficOfDay">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+            <xs:element name="year" type="xs:int" />
+            <xs:element name="month" type="xs:int" />
+            <xs:element name="day" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerTrafficOfDayResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:trafficDayObject" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="trafficDayObject">
+        <xs:complexContent>
+            <xs:extension base="tns:trafficMonthObject">
+                <xs:sequence>
+                    <xs:element name="day" type="xs:int" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerNickname">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vservername" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerNicknameResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="setVServerNickname">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vservername" type="xs:string" />
+            <xs:element name="vservernickname" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="setVServerNicknameResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerLoad">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServerLoadResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerACPIShutdown">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerACPIShutdownResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServers">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getVServersResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerRestore">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vServerRestoreResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addCloudVLANInterface">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vservername" type="xs:string" />
+            <xs:element name="cloudvlanid" type="xs:int" />
+            <xs:element name="driver" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addCloudVLANInterfaceResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="startVServer">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="vserverName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="startVServerResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:webServiceSimpleResult" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="setPanelSettings">
+        <xs:sequence>
+            <xs:element name="loginName" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="showNickname" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="setPanelSettingsResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="vsipType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ipboth" />
+            <xs:enumeration value="IPv4" />
+            <xs:enumeration value="IPv6" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

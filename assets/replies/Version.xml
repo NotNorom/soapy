@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <ns3:getVersionResponse xmlns:ns2="http://www.ecotransit.org/XMLSchema/standard/2012" xmlns:ns3="http://www.ecotransit.org/XMLSchema/ecotransit_world/2012">
+            <name>etw-jv-2022r6.0-SNAPSHOT-etw_db_2022r6v013-SNAPSHOT-etw_ef_2021r1.08</name>
+            <server>
+                <parameter type="Version">
+                    <ns2:value>SNAPSHOT</ns2:value>
+                </parameter>
+                <parameter type="CreationDate">
+                    <ns2:value>UNKNOWN</ns2:value>
+                </parameter>
+                <parameter type="EmissionDataVersion">
+                    <ns2:value>etw_ef_2021r1.08</ns2:value>
+                </parameter>
+            </server>
+            <database>
+                <parameter type="Name">
+                    <ns2:value>etw_db_2022r6v013</ns2:value>
+                </parameter>
+                <parameter type="CreationDate">
+                    <ns2:value>2022-07-03 19:08:42.000</ns2:value>
+                </parameter>
+                <parameter type="LastUpdateDate">
+                    <ns2:value>2022-07-03 21:50:51.000</ns2:value>
+                </parameter>
+            </database>
+            <webservice>
+                <parameter type="Version">
+                    <ns2:value>etw-jv-2022r6.0-SNAPSHOT</ns2:value>
+                </parameter>
+                <parameter type="BuildTimestamp">
+                    <ns2:value>2022-07-01 09:03:46</ns2:value>
+                </parameter>
+                <parameter type="CCWG">
+                    <ns2:value>ccwg</ns2:value>
+                </parameter>
+                <parameter type="Year">
+                    <ns2:value>2020</ns2:value>
+                </parameter>
+                <parameter type="Logging Service endPoint">
+                    <ns2:value>http://localhost:8080/LoggingWS/</ns2:value>
+                </parameter>
+                <parameter type="Flightdata Service endPoint">
+                    <ns2:value>http://80.150.16.229:8080/ETWFlightDataWS/</ns2:value>
+                </parameter>
+            </webservice>
+        </ns3:getVersionResponse>
+    </S:Body>
+</S:Envelope>

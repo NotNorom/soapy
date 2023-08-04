@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <ns2:getVServerInformationResponse xmlns:ns2="http://enduser.service.web.vcp.netcup.de/">
+            <return>
+                <cpuCores>10</cpuCores>
+                <currentMonth>
+                    <in>0</in>
+                    <month>7</month>
+                    <out>0</out>
+                    <total>0</total>
+                    <year>2022</year>
+                </currentMonth>
+                <ips>194.59.206.209</ips>
+                <ips>2a03:4000:34:38f::</ips>
+                <memory>34359</memory>
+                <rebootRecommended>true</rebootRecommended>
+                <rebootRecommendedMessage>New KVM Version available! Please power cycle this instance to activate new improvements.</rebootRecommendedMessage>
+                <rescueEnabled>false</rescueEnabled>
+                <rescueEnabledMessage></rescueEnabledMessage>
+                <serverDisks>
+                    <capacity>937</capacity>
+                    <driver>scsi</driver>
+                    <name>vda</name>
+                    <optimizationRecommended>true</optimizationRecommended>
+                    <optimizationRecommendedMessage>A storage optimization is necessary. Please use the web panel.</optimizationRecommendedMessage>
+                    <used>550</used>
+                </serverDisks>
+                <serverInterfaces>
+                    <driver>virtio</driver>
+                    <id>5fbc3ca7543a62edf53bdc9e862d64e2</id>
+                    <ipv4IP>194.59.206.209</ipv4IP>
+                    <ipv6IP>2a03:4000:34:38f::/64</ipv6IP>
+                    <mac>c6:ad:ac:af:aa:98</mac>
+                    <trafficThrottled>false</trafficThrottled>
+                    <trafficThrottledMessage></trafficThrottledMessage>
+                </serverInterfaces>
+                <status>online</status>
+                <uptime>37 days 14 hours 55 minutes</uptime>
+                <vServerName>v22019023839484102</vServerName>
+                <vServerNickname>nc-dhl</vServerNickname>
+            </return>
+        </ns2:getVServerInformationResponse>
+    </S:Body>
+</S:Envelope>

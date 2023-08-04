@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope">
+            <faultcode>S:Server</faultcode>
+            <faultstring>java.lang.NullPointerException</faultstring>
+            <detail>
+                <ns2:exception xmlns:ns2="http://jax-ws.dev.java.net/" class="java.lang.NullPointerException" note="To disable this feature, set com.sun.xml.ws.fault.SOAPFaultBuilder.disableCaptureStackTrace system property to false">
+                    <ns2:stackTrace>
+                        <ns2:frame class="de.ivembh.ecotransit.webservice.standard.soap.control.ETWStandardControl" file="ETWStandardControl.java" line="130" method="executeRequest" />
+                        <ns2:frame class="de.ivembh.ecotransit.webservice.standard.soap.ETWStandard" file="ETWStandard.java" line="496" method="getVersion" />
+                        <ns2:frame class="sun.reflect.GeneratedMethodAccessor117" line="unknown" method="invoke" />
+                        <ns2:frame class="sun.reflect.DelegatingMethodAccessorImpl" file="DelegatingMethodAccessorImpl.java" line="43" method="invoke" />
+                        <ns2:frame class="java.lang.reflect.Method" file="Method.java" line="498" method="invoke" />
+                        <ns2:frame class="com.sun.xml.ws.api.server.InstanceResolver$1" file="InstanceResolver.java" line="246" method="invoke" />
+                        <ns2:frame class="com.sun.xml.ws.server.InvokerTube$2" file="InvokerTube.java" line="146" method="invoke" />
+                        <ns2:frame class="com.sun.xml.ws.server.sei.EndpointMethodHandler" file="EndpointMethodHandler.java" line="257" method="invoke" />
+                        <ns2:frame class="com.sun.xml.ws.server.sei.SEIInvokerTube" file="SEIInvokerTube.java" line="93" method="processRequest" />
+                        <ns2:frame class="com.sun.xml.ws.api.pipe.Fiber" file="Fiber.java" line="598" method="__doRun" />
+                        <ns2:frame class="com.sun.xml.ws.api.pipe.Fiber" file="Fiber.java" line="557" method="_doRun" />
+                        <ns2:frame class="com.sun.xml.ws.api.pipe.Fiber" file="Fiber.java" line="542" method="doRun" />
+                        <ns2:frame class="com.sun.xml.ws.api.pipe.Fiber" file="Fiber.java" line="439" method="runSync" />
+                        <ns2:frame class="com.sun.xml.ws.server.WSEndpointImpl$2" file="WSEndpointImpl.java" line="243" method="process" />
+                        <ns2:frame class="com.sun.xml.ws.transport.http.HttpAdapter$HttpToolkit" file="HttpAdapter.java" line="471" method="handle" />
+                        <ns2:frame class="com.sun.xml.ws.transport.http.HttpAdapter" file="HttpAdapter.java" line="244" method="handle" />
+                        <ns2:frame class="com.sun.xml.ws.transport.http.servlet.ServletAdapter" file="ServletAdapter.java" line="135" method="handle" />
+                        <ns2:frame class="com.sun.xml.ws.transport.http.servlet.WSServletDelegate" file="WSServletDelegate.java" line="129" method="doGet" />
+                        <ns2:frame class="com.sun.xml.ws.transport.http.servlet.WSServletDelegate" file="WSServletDelegate.java" line="160" method="doPost" />
+                        <ns2:frame class="com.sun.xml.ws.transport.http.servlet.WSServlet" file="WSServlet.java" line="75" method="doPost" />
+                        <ns2:frame class="javax.servlet.http.HttpServlet" file="HttpServlet.java" line="661" method="service" />
+                        <ns2:frame class="javax.servlet.http.HttpServlet" file="HttpServlet.java" line="742" method="service" />
+                        <ns2:frame class="org.apache.catalina.core.ApplicationFilterChain" file="ApplicationFilterChain.java" line="231" method="internalDoFilter" />
+                        <ns2:frame class="org.apache.catalina.core.ApplicationFilterChain" file="ApplicationFilterChain.java" line="166" method="doFilter" />
+                        <ns2:frame class="org.apache.tomcat.websocket.server.WsFilter" file="WsFilter.java" line="52" method="doFilter" />
+                        <ns2:frame class="org.apache.catalina.core.ApplicationFilterChain" file="ApplicationFilterChain.java" line="193" method="internalDoFilter" />
+                        <ns2:frame class="org.apache.catalina.core.ApplicationFilterChain" file="ApplicationFilterChain.java" line="166" method="doFilter" />
+                        <ns2:frame class="org.apache.catalina.core.StandardWrapperValve" file="StandardWrapperValve.java" line="200" method="invoke" />
+                        <ns2:frame class="org.apache.catalina.core.StandardContextValve" file="StandardContextValve.java" line="96" method="invoke" />
+                        <ns2:frame class="org.apache.catalina.authenticator.AuthenticatorBase" file="AuthenticatorBase.java" line="493" method="invoke" />
+                        <ns2:frame class="org.apache.catalina.core.StandardHostValve" file="StandardHostValve.java" line="137" method="invoke" />
+                        <ns2:frame class="org.apache.catalina.valves.ErrorReportValve" file="ErrorReportValve.java" line="81" method="invoke" />
+                        <ns2:frame class="org.apache.catalina.valves.AbstractAccessLogValve" file="AbstractAccessLogValve.java" line="660" method="invoke" />
+                        <ns2:frame class="org.apache.catalina.core.StandardEngineValve" file="StandardEngineValve.java" line="87" method="invoke" />
+                        <ns2:frame class="org.apache.catalina.connector.CoyoteAdapter" file="CoyoteAdapter.java" line="343" method="service" />
+                        <ns2:frame class="org.apache.coyote.http11.Http11Processor" file="Http11Processor.java" line="798" method="service" />
+                        <ns2:frame class="org.apache.coyote.AbstractProcessorLight" file="AbstractProcessorLight.java" line="66" method="process" />
+                        <ns2:frame class="org.apache.coyote.AbstractProtocol$ConnectionHandler" file="AbstractProtocol.java" line="806" method="process" />
+                        <ns2:frame class="org.apache.tomcat.util.net.NioEndpoint$SocketProcessor" file="NioEndpoint.java" line="1498" method="doRun" />
+                        <ns2:frame class="org.apache.tomcat.util.net.SocketProcessorBase" file="SocketProcessorBase.java" line="49" method="run" />
+                        <ns2:frame class="java.util.concurrent.ThreadPoolExecutor" file="ThreadPoolExecutor.java" line="1149" method="runWorker" />
+                        <ns2:frame class="java.util.concurrent.ThreadPoolExecutor$Worker" file="ThreadPoolExecutor.java" line="624" method="run" />
+                        <ns2:frame class="org.apache.tomcat.util.threads.TaskThread$WrappingRunnable" file="TaskThread.java" line="61" method="run" />
+                        <ns2:frame class="java.lang.Thread" file="Thread.java" line="748" method="run" />
+                    </ns2:stackTrace>
+                </ns2:exception>
+            </detail>
+        </S:Fault>
+    </S:Body>
+</S:Envelope>

@@ -1,0 +1,10 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://enduser.service.web.vcp.netcup.de/">
+    <soap:Header>
+    </soap:Header>
+    <soap:Body>
+        <ns0:getVServers>
+            <loginName>${{user}}</loginName>
+            <password>${{password}}</password>
+        </ns0:getVServers>
+    </soap:Body>
+</soap:Envelope>

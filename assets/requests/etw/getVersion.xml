@@ -1,0 +1,6 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://www.ecotransit.org/XMLSchema/ecotransit_world/2012">
+    <soapenv:Header />
+    <soapenv:Body>
+        <ns2:getVersionRequest customer="${{customer}}" password="${{password}}" />
+    </soapenv:Body>
+</soapenv:Envelope>
