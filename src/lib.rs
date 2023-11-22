@@ -4,7 +4,7 @@ pub mod generator;
 pub use error::Error;
 
 use serde::{Deserialize, Serialize};
-use tracing::debug;
+use tracing::{debug, instrument};
 use xml_serde::from_str;
 
 pub trait SoapHeader {}
@@ -149,18 +149,22 @@ impl Client {
     }
 
     #[inline]
+    #[instrument(skip_all)]
     pub async fn send<T>(&self, body: &str, target: &str) -> Result<T, Error>
     where
         T: for<'a> Deserialize<'a>,
     {
-        let raw_response = self
-            .post_request(body, target)
-            .await
-            .map_err(|err| Error::SendRequest {
-                target: target.to_owned(),
-                body: body.to_owned(),
-                error: err,
-            })?;
+        let raw_response =
+            self.post_request(body, target)
+                .await
+                .map_err(|err| Error::SendRequest {
+                    target: target.to_owned(),
+                    body: body.to_owned(),
+                    error: err,
+                })?;
+
+        debug!(raw_response);
+
         let soap_resp: Response<T> = from_str(&raw_response).map_err(|err| Error::Decode {
             target: target.to_owned(),
             body: raw_response,
@@ -169,7 +173,12 @@ impl Client {
         Ok(soap_resp.envelope.body)
     }
 
-    async fn post_request(&self, body: &str, target: impl reqwest::IntoUrl) -> Result<String, reqwest::Error> {
+    #[instrument(skip_all)]
+    async fn post_request(
+        &self,
+        body: &str,
+        target: impl reqwest::IntoUrl,
+    ) -> Result<String, reqwest::Error> {
         self.http
             .post(target.into_url()?)
             .body(body.to_owned())
