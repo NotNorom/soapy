@@ -24,7 +24,9 @@ pub enum Error {
         error: xml_serde::Error,
     },
     #[error("Unexpected reponse variant")]
-    UnexpectedResponseVariant { variant: Box<dyn DebugSoapResponseBody> },
+    UnexpectedResponseVariant {
+        variant: Box<dyn DebugSoapResponseBody>,
+    },
     #[error("{0:?}")]
     Fault(Box<dyn DebugSoapResponseBody>),
 }

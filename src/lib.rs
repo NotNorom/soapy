@@ -41,7 +41,7 @@ pub mod response {
 
     use crate::SoapHeader;
 
-    pub trait SoapResponseBody {
+    pub trait SoapResponseBody: Send  {
         #[inline]
         fn fault(&self) -> Option<Fault> {
             None
@@ -56,7 +56,7 @@ pub mod response {
         }
     }
 
-    impl<'a, T> SoapResponseBody for T where T: Deserialize<'a> {}
+    impl<'a, T> SoapResponseBody for T where T: Deserialize<'a> + Send {}
 
     #[derive(Debug, Deserialize, Serialize, PartialEq, Eq)]
     pub struct Response<T: SoapResponseBody, U: SoapHeader = ()> {
@@ -153,6 +153,7 @@ impl Client {
     pub async fn send<T>(&self, body: &str, target: &str) -> Result<T, Error>
     where
         T: for<'a> Deserialize<'a>,
+        T: Send,
     {
         let raw_response =
             self.post_request(body, target)
